@@ -1,0 +1,8 @@
+@use "../../assets/scss/" as *;
+.chat-container {
+  overflow-y: scroll;
+  height: calc(100vh - (var(--navbar-height) + var(--input-height)));
+  // border: 1px black solid;
+  background-color: #e2e4ea;
+  width: 100%;
+}

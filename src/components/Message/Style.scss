@@ -1,0 +1,55 @@
+@use "../../assets/scss/" as *;
+.message-container {
+  @include flex(row, null, null);
+  padding: 30px;
+  width: 100%;
+  .message-info {
+    @include flex(column, center, null);
+    margin-right: 20px;
+    img {
+      width: 70px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    p {
+      color: rgb(46, 46, 46);
+      font-weight: 300;
+    }
+  }
+  .message-content {
+    max-width: 80%;
+    @include flex(column, null, null);
+    img {
+      width: 50%;
+      height: auto;
+      margin: 10px 0px;
+    }
+    p {
+      break-inside: auto;
+      max-width: 80%;
+      width: fit-content;
+      margin: 10px 0px;
+      background-color: white;
+      padding: 10px;
+      border-radius: 0px 8px 8px 8px;
+      word-wrap: break-word;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &.owner {
+    @include flex(row-reverse, null, null);
+    .message-info {
+      margin-right: 0px;
+      margin-left: 20px;
+    }
+    .message-content {
+      align-items: flex-end;
+      p {
+        color: white;
+        background-color: #8d8ff1;
+        border-radius: 8px 0px 8px 8px;
+      }
+    }
+  }
+}

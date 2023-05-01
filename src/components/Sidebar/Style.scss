@@ -1,0 +1,8 @@
+@use "../../assets/scss/" as *;
+.side-container {
+  border-right: var(--border-color) solid 1px;
+  //border: solid black 1px;
+  //width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  align-self: flex-start;
+}

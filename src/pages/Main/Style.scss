@@ -1,0 +1,19 @@
+@use "../../assets/scss/" as *;
+.chat-page {
+  width: 100vw;
+
+  .chat-row {
+    @include flex(row, null, null);
+    width: 100%;
+    .chat-window {
+      //max-width: calc(100vw - var(--sidebar-width));
+      @include tablet {
+        // max-width: calc(100vw - var(--sidebar-width-tablet));
+      }
+      flex-grow: 1;
+
+      width: 300px; //??????? 100% -> hong
+      @include flex(column, center, center);
+    }
+  }
+}

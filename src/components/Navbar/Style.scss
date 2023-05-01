@@ -1,0 +1,26 @@
+@use "../../assets/scss/" as *;
+.nav-container {
+  //border: solid black 1px;
+  width: 100vw;
+  height: var(--navbar-height);
+  border-bottom: var(--border-color) 1px solid;
+  @include flex(row, space-between, center);
+  .logo-container {
+    padding-left: 15px;
+    .logo {
+      font-size: 3rem;
+      font-style: italic;
+    }
+  }
+  .user-container {
+    @include flex(row, flex-end, center);
+    padding-right: 15px;
+    gap: 10px;
+    height: 100%;
+    .avatar {
+      height: 70%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+  }
+}

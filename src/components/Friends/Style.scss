@@ -1,0 +1,33 @@
+@use "../../assets/scss/" as *;
+
+.friend-container {
+  height: var(--friend-height);
+  //border: solid black 1px;
+  @include flex(row, center, center);
+  padding: 1rem;
+  .img-frame {
+    height: 100%;
+    aspect-ratio: 1;
+    border: solid black 1px;
+    border-radius: 50%;
+    margin: 2rem;
+  }
+  .friend-content {
+    width: 310px;
+    height: 100%;
+    @include tablet {
+      display: none;
+    }
+    @include flex(column, center, flex-start);
+    .friend-name {
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+    .friend-message {
+      font-weight: 400;
+    }
+  }
+  &:hover {
+    background-color: #e4e4e477;
+  }
+}

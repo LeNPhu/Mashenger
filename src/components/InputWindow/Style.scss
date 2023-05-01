@@ -1,0 +1,42 @@
+@use "../../assets/scss/" as *;
+.input-container {
+  // border: 1px solid black;
+  // width: calc(100vh - var(--sidebar-width));
+  width: 100%;
+  position: relative;
+  height: var(--input-height);
+  @include flex(row, center, center);
+  .input {
+    height: 100%;
+    font-size: 2rem;
+    border-radius: 0;
+    border-left: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+  }
+  .btn-container {
+    @include flex(row, center, center);
+    margin: 10px;
+    position: absolute;
+    right: 0;
+    .btn {
+      width: 5rem;
+      height: auto;
+      border-radius: 50%;
+      aspect-ratio: 1;
+      margin: 10px;
+      border: 0px;
+      background-color: white;
+      .icon {
+        font-size: 2.5rem;
+        color: #7f81ee;
+      }
+    }
+    .btn:hover {
+      background-color: rgba(235, 235, 235, 0.63);
+    }
+    .btn:active {
+      background-color: rgb(231, 230, 230);
+    }
+  }
+}
