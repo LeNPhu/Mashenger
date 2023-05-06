@@ -3,7 +3,7 @@ import { getFriends } from "../../util/firebase/firestore";
 
 const initialState = {
   friend: [],
-
+  lastMessage: "",
   isLoading: false,
 };
 const FriendsSlice = createSlice({
