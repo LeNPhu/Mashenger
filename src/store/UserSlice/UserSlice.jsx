@@ -13,6 +13,7 @@ const initialState = {
   user: user,
   isRegistered,
   isLoading: false,
+  lastMessage: "Send a message!",
 };
 
 const UserSlice = createSlice({

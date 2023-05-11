@@ -20,7 +20,8 @@ const ChatSlice = createSlice({
       state.chatId =
         user.uid > action.payload.uid
           ? user.uid + action.payload.uid
-          : action.payload.ui + user.uid;
+          : action.payload.uid + user.uid;
+
       getChat(action.payload);
     },
   },

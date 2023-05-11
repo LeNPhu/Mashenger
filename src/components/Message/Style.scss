@@ -18,7 +18,7 @@
     }
   }
   .message-content {
-    max-width: 80%;
+    width: 80%;
     @include flex(column, null, null);
     img {
       width: 50%;

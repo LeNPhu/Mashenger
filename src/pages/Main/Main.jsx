@@ -8,12 +8,8 @@ import Chat from "../../components/Chat/Chat";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import InputWindow from "../../components/InputWindow/InputWindow";
 import { useEffect } from "react";
-import { getFriends } from "../../util/firebase/firestore";
+
 const Main = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getFriends());
-  }, []);
   return (
     <div className="chat-page">
       <div className="nav-bar">
