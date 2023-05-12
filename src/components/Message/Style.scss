@@ -1,11 +1,13 @@
 @use "../../assets/scss/" as *;
 .message-container {
   @include flex(row, null, null);
-  padding: 30px;
+  padding: 10px;
+  padding-right: 30px;
   width: 100%;
   .message-info {
-    @include flex(column, center, null);
+    @include flex(column, center, center);
     margin-right: 20px;
+
     img {
       width: 70px;
       aspect-ratio: 1;
@@ -15,6 +17,7 @@
     p {
       color: rgb(46, 46, 46);
       font-weight: 300;
+      padding: 5px;
     }
   }
   .message-content {

@@ -5,4 +5,11 @@
   // border: 1px black solid;
   background-color: #e2e4ea;
   width: 100%;
+  .start-container {
+    height: 100%;
+    @include flex(column, center, center);
+    p {
+      font-size: 2rem;
+    }
+  }
 }

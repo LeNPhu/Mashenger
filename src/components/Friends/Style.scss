@@ -13,18 +13,19 @@
     margin: 2rem;
   }
   .friend-content {
-    width: 310px;
+    width: 220px;
     height: 100%;
     @include tablet {
       display: none;
     }
     @include flex(column, center, flex-start);
     .friend-name {
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       font-weight: 600;
     }
     .friend-message {
       font-weight: 400;
+      color: rgb(72, 72, 72);
     }
   }
   &:hover {

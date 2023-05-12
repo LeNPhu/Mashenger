@@ -5,12 +5,18 @@ import { Button, Upload } from "antd";
 import { AiOutlineUpload, AiOutlineSend } from "react-icons/ai";
 import { sendMessage } from "../../util/firebase/firestore";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 const InputWindow = () => {
+  const [message, setMessage] = useState("");
   const { user } = useSelector((store) => store.user);
   const { chatId } = useSelector((store) => store.chat);
+  const handleChange = (e) => {
+    setMessage(e.currentTarget.value);
+  };
   const handleSubmit = (e) => {
     if (e.key === "Enter") {
       sendMessage(chatId, e.target.value, user.uid);
+      setMessage("");
     }
   };
   return (
@@ -19,6 +25,8 @@ const InputWindow = () => {
         className="input"
         placeholder="Type something..."
         onKeyDown={handleSubmit}
+        onChange={handleChange}
+        value={message}
       />
       <div className="btn-container">
         {/* <AiOutlineUpload className="btn btn-upload">
@@ -35,9 +43,9 @@ const InputWindow = () => {
             <AiOutlineUpload className="icon" />
           </button>
         </Upload>
-        <button className="btn btn-send">
+        {/* <button className="btn btn-send">
           <AiOutlineSend className="icon" />
-        </button>
+        </button> */}
       </div>
     </div>
   );

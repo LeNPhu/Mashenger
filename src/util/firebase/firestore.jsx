@@ -70,6 +70,7 @@ export const getChat = async (friend) => {
     if (!res.exists()) {
       await setDoc(doc(db, "chats", combinedId), {
         messages: [],
+        lastMessage: "Send a message!",
       });
     }
   } catch (err) {
@@ -86,6 +87,7 @@ export const sendMessage = async (chatId, text, senderId) => {
         senderId,
         date: Timestamp.now(),
       }),
+      lastMessage: text,
     });
   } catch (err) {
     console.log(err);

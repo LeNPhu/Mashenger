@@ -4,7 +4,7 @@ import React from "react";
 import { getUserImage } from "../../util/firebase/firestore";
 import { useEffect } from "react";
 import { useState } from "react";
-
+import moment from "moment/moment";
 const Message = (props) => {
   const { data } = props;
   const { user } = useSelector((store) => store.user);
@@ -22,9 +22,13 @@ const Message = (props) => {
         }`}
       >
         <div className="message-info">
-          {/* <img src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=754&h=502&fit=crop&dpr=1" /> */}
           <img src={img} />
-          <p>Just now</p>
+
+          <p>
+            {data.date.toMillis() > moment().startOf("day").valueOf()
+              ? moment(data.date.toMillis()).format("HH:mm")
+              : moment(data.date.toMillis()).format("MMM DD, YYYY")}
+          </p>
         </div>
         <div className="message-content">
           <p>{data.text}</p>
