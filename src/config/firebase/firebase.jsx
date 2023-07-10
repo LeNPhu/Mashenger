@@ -5,7 +5,7 @@ import {
   GoogleAuthProvider,
   getAuth,
 } from "firebase/auth";
-
+import { getStorage } from "firebase/storage";
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -21,3 +21,4 @@ export const googleProvider = new GoogleAuthProvider();
 export const facebookProvider = new FacebookAuthProvider();
 
 export const db = getFirestore(app);
+export const storage = getStorage(app);

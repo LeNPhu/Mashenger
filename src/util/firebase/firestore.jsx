@@ -63,7 +63,9 @@ export const getChat = async (friend) => {
     : null;
 
   const combinedId =
-    user.uid > friend.uid ? user.uid + friend.uid : friend.ui + user.uid;
+    user.uid > friend.uid ? user.uid + friend.uid : friend.uid + user.uid;
+  console.log(friend.uid);
+  console.log(combinedId);
   try {
     const res = await getDoc(doc(db, "chats", combinedId));
 
@@ -78,16 +80,20 @@ export const getChat = async (friend) => {
   }
 };
 
-export const sendMessage = async (chatId, text, senderId) => {
+export const sendMessage = async (chatId, text, senderId, img) => {
   try {
+    let temp = "Sent an image";
+    img == "false" ? (temp = text) : null;
     await updateDoc(doc(db, "chats", chatId), {
       messages: arrayUnion({
         id: uuid(),
         text,
         senderId,
         date: Timestamp.now(),
+        image: img,
       }),
-      lastMessage: text,
+
+      lastMessage: temp,
     });
   } catch (err) {
     console.log(err);

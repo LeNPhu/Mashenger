@@ -31,7 +31,7 @@ const Message = (props) => {
           </p>
         </div>
         <div className="message-content">
-          <p>{data.text}</p>
+          {data.image == "true" ? <img src={data.text} /> : <p>{data.text}</p>}
         </div>
       </div>
     </>

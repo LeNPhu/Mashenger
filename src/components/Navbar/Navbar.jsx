@@ -3,6 +3,7 @@ import "./Style.scss";
 import { Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../store/UserSlice/UserSlice";
+import Search from "../Search/Search";
 const Navbar = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user);
@@ -12,6 +13,7 @@ const Navbar = () => {
       <div className="logo-container">
         <span className="logo">Mashenger</span>
       </div>
+
       <div className="user-container">
         <img className="avatar" src={user.photoURL} />
         <span>Hello, {user.displayName}</span>

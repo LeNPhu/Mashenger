@@ -24,6 +24,7 @@ const Chat = () => {
 
   useEffect(() => {
     try {
+      console.log(chatId);
       const unsubscribe = onSnapshot(doc(db, "chats", chatId), (doc) => {
         setMessage(doc.data().messages);
         scrollToBottom();

@@ -5,6 +5,7 @@
   //border: solid black 1px;
   @include flex(row, center, center);
   padding: 1rem;
+
   .img-frame {
     height: 100%;
     aspect-ratio: 1;
@@ -12,23 +13,31 @@
     border-radius: 50%;
     margin: 2rem;
   }
+
   .friend-content {
     width: 220px;
     height: 100%;
+
     @include tablet {
       display: none;
     }
+
     @include flex(column, center, flex-start);
+
     .friend-name {
       font-size: 1.8rem;
       font-weight: 600;
     }
+
     .friend-message {
       font-weight: 400;
       color: rgb(72, 72, 72);
     }
   }
+
   &:hover {
     background-color: #e4e4e477;
   }
+
+
 }
